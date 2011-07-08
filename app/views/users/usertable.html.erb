@@ -1,0 +1,25 @@
+<h1> List of Users <h1>
+
+<table>
+	<tr>
+		<th> Email id </th>
+		<th> Number of events attended </th>
+	</tr>
+	
+	<% @users.each do |user|%>
+	<tr>
+		<td> <%= user.email%> </td>
+		<td> <%=user.participations.count%></td>
+		<td> <a href="diff_userevents?id=<%=user.id%>"> Events attended </a> </td>
+	</tr>
+	<%end%>
+	
+</table>
+
+<p>
+	<%=link_to "Events index", events_index_path%>
+</p>
+
+<p>
+	<%=link_to "Events i attended", userevents_path%>
+</p>	

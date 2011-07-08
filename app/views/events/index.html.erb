@@ -1,0 +1,43 @@
+<h1> Index of Events </h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Start date</th>
+		<th>End date</th>
+		<th>Description</th>
+	</tr>
+	
+	
+	<% @events.each do |event|%>
+		<tr>
+			<td><%= event.event_name%></td>
+			<td><%= event.event_type%></td>
+			<td><%= event.start_date%></td>		
+    	<td><%= event.end_date%></td>
+    	<td><%= event.event_dscrip%></td>	
+    	<td><%= link_to "Show Details", event%></td>
+    	<td><%= link_to "Delete event", event, :confirm =>"really?", :method => :delete %> </td>
+    	
+    </tr>
+  <%end%>
+</table>
+
+<br/>    
+
+<%=link_to "Create new Event", events_new_path%> <br /> <br />
+<%=link_to "Events i attended", userevents_path%> <br /> <br />
+<%=link_to "View all Seminars", all_seminars_path%><br />
+<%=link_to "View all Lectures", all_lectures_path%><br />
+<%=link_to "View all Conferences", all_conferences_path%>
+
+
+
+
+
+
+
+    	
+    	
+    	

@@ -1,0 +1,50 @@
+<h2> Event details </h2>
+
+
+<p>
+	Event name: <%=@event.event_name%>
+</p>
+
+<p>
+	Event type: <%=@event.event_type%>
+</p>
+
+<p>		
+	Event start date: <%=@event.start_date%>
+</p>
+
+<p>		
+	Event end date: <%=@event.end_date%>
+</p>
+
+<p>		
+	Event description: <%=@event.event_dscrip%>
+</p>
+
+<h2> Participants and their remarks </h2>
+<%=render @event.participations%>
+
+
+
+<h2> Register </h2>
+
+<%=form_for([@event, @event.participations.build]) do |f|%>
+	<div class="field">
+		<%= f.label :remarks%><br />
+		<%= f.text_area :remarks%>
+	</div>
+	
+	<div class="actions">
+		<input id="participation_submit" name="commit" type="submit" value="Register" />
+	</div>
+<%end%>			
+
+
+
+
+
+<p>
+	<%=link_to "Back to index", events_index_path%>
+</p>
+
+
